@@ -36,10 +36,10 @@ var pets = nStore.new('data/pets.db', function () {
 });
 
 server.get('/api', function(req, res, next) {
-    makeRequest();
+    makeRequest(req,res,next);
 });
 
-function makeRequest() {
+function makeRequest(req,res,next) {
     request(endpoint, function(err, req, body) {
         if (err) return next(err);
 
